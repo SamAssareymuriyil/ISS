@@ -10,7 +10,6 @@ function setupMap(center){
 
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav,'top-right')
-    let cords = [...center];
 
     let geojson = {
         type: 'FeatureCollection',
@@ -22,7 +21,7 @@ function setupMap(center){
         },
         properties: {
             title: 'ISS',
-            description: 'The current location of the international space station! ' + '(' + cords + ')'
+            description: 'The current location of the international space station! ' + '(' + center + ')'
         }
         }]
     };
