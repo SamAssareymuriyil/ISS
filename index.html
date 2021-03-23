@@ -8,6 +8,12 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
     <title>ISS Tracker</title>
     <link rel="icon" href="./issIMG.png">
+    <meta property="og:title" content="ISS Tracker" />
+    <meta property="og:description"
+        content="A Simple ISS Tracker created by Sam Assareymuriyil
+            Updates every 15 seconds to keep up to date!" />
+    <meta property="og:url" content="https://samassareymuriyil.github.io/ISS/" />
+    <meta property="og:image" content="./issIMG.png" />
     <style>
         #map {
             height: 98vh;
@@ -27,6 +33,9 @@
         .mapboxgl-popup-content {
             text-align: center;
             font-family: 'Open Sans', sans-serif;
+        }
+        #image{
+            max-width: 150px;
         }
     </style>
     <script src="scripts.js" defer></script>

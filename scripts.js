@@ -21,18 +21,19 @@ function setupMap(center){
         },
         properties: {
             title: 'ISS',
-            description: 'The current location of the international space station! ' + '(' + center + ')'
+            description: 'The current location of the international space station! ' + '(' + center + ')',
+            image: './issSPACE.jpg'
         }
         }]
     };
 
     geojson.features.forEach(function(marker) {
-        var el = document.createElement('div');
+        let el = document.createElement('div');
         el.className = 'marker';
         new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
-            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+            .setPopup(new mapboxgl.Popup({ offset: 25 })
+                .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>' + '<p><img id="image" src="' + marker.properties.image + '"alt="An Image of the ISS"></p>'))
             .addTo(map);
     });
 }
